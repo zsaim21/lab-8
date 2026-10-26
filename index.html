@@ -1,0 +1,70 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe Management System</title>
+    <link rel="stylesheet" href="saim8.css">
+</head>
+<body>
+    <header>
+        <h1>🍲 Recipe Book</h1>
+        <p>Discover, create, and manage your favorite recipes.</p>
+    </header>
+
+    <main class="container">
+        <section class="form-section">
+            <h2 id="formTitle">Add New Recipe</h2>
+
+            <form id="recipeForm">
+                <input type="hidden" id="recipeId">
+
+                <label for="title">Recipe Title</label>
+                <input type="text" id="title" placeholder="Enter recipe name" required>
+
+                <label for="ingredients">Ingredients</label>
+                <textarea id="ingredients" placeholder="Enter ingredients, separated by commas" required></textarea>
+
+                <label for="instructions">Instructions</label>
+                <textarea id="instructions" placeholder="Enter cooking instructions" required></textarea>
+
+                <label for="image">Recipe Image</label>
+                <input type="file" id="image" accept="image/*">
+
+                <img id="imagePreview" class="preview" alt="Image preview" hidden>
+
+                <div class="form-buttons">
+                    <button type="submit" id="saveButton">Add Recipe</button>
+                    <button type="button" id="cancelButton" class="secondary" hidden>
+                        Cancel
+                    </button>
+                </div>
+            </form>
+        </section>
+
+        <section class="recipes-section">
+            <h2>My Recipes</h2>
+
+            <input type="search" id="searchInput"
+                   placeholder="Search by title or ingredient...">
+
+            <div id="recipeList" class="recipe-grid"></div>
+            <p id="emptyMessage">No recipes found. Add your first recipe!</p>
+        </section>
+    </main>
+
+    <dialog id="recipeDialog">
+        <div class="dialog-content">
+            <button id="closeDialog" class="close-button" aria-label="Close">✕</button>
+            <div id="recipeDetails"></div>
+        </div>
+    </dialog>
+
+    <footer>
+        <p>Recipe Management System &copy; 2026</p>
+    </footer>
+
+    <script src="saim8.js"></script>
+</body>
+</html>
